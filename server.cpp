@@ -545,7 +545,7 @@ int main(int argc, char** argv) {
     /* Initialize signal handlers */
     init_signal_handlers();
     
-    cout << "    RVC TCP STATION SERVER Copyright (c) 2019 Rajas Chavadekar ( @rvcgeeks____ )\n";
+    cout << "    C-Through by Maynak Yadav";
     
     /* Arguments  :: -1 on input error */
     if (argc < 2) {
