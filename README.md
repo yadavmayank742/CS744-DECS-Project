@@ -20,8 +20,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-However this project is built on Kali 6.8.11-1kali2 so
+However this project is built on Kali Linux 6.8.11-amd64 so
 the release for this project can work on any 64 bit Debian distributions.
+However we are planning to create a configuration for Windows in further releases
 
 On the OS you need:
 1) gnu make
@@ -42,7 +43,7 @@ To compile server and client binary without creating the run archive,
 you can make these targets separately as
 
 ```
-make server; make client
+make server && make client
 ```
 
 ## Deployment
@@ -56,7 +57,7 @@ We have an intuitive and interactive script that will launch the client automati
 ./c-through.run
 ```
 running the binary without arguments will start the launcher script.
-On the terminal of PC you have decided to keep as server run `c-through`
+On the terminal of PC you have decided to keep as server run c-through-server
 
 ```
 ./c-through.run --run-server (port no)
@@ -84,19 +85,19 @@ but specify the username after `--preset-uname` flag if given.
 
 
 One can also set the client as a startup service via this script 
-to uninstall the client from startup service (if exist) just send `-u` flag to this script
+to uninstall the client from startup service (if exist) just send -u flag to this script
 to do it in single commandline itself
 ```
 ./c-through.run -u
 ```
 If you want to completely and remotely uninstall the client from remote pc, on RSH of victim in your client program you can send command
 ```
---shell-- @(victim uname) --bash-- init; (path to the script)/rvc-tcp-station -u
+--shell-- @(victim uname) --bash-- init; (path to the script)/c-through -u
 ```
 So 'init' will cause the connection to terminate and immediately the uninstall is carried out
 You will never need to fear what if other user shuts down without leaving the group, will the threads 
 be damaged? will the network get destroyed? absolutely no as we have caught SIGTERM at the client side and 
-have gracefully closed the ongoing connection with proper --exit-- request to server. SIGTERM is sent by OS to 
+have gracefully closed the ongoing connection with proper `--exit--` request to server. SIGTERM is sent by OS to 
 running applications to give them a chance to execute cleanup and their own exit routines .. we have just made use 
 of it. So by these all features of client a hidden remote control of deploy and forget type can be implemented. 
 Atleast for now, server does not have this feature as it may be serving multiple clients and
@@ -122,14 +123,14 @@ As we have used gethostbyname client can connect the host
 
 We had successfully tested this application with 'ngrok'
 1) Create an account woth ngrok and follow their steps for installation and port forwarding. [Check their site](https://ngrok.com/download) 
-2) Launch rvc-tcp-station server at say port X (>1024) 
+2) Launch **c-through** server at say port X (>1024) 
 3) Launch ngrok in plain tcp mode 
 ```
 ./ngrok tcp X
 ```
-where X is port where you have launched rvc-tcp-server
+where X is port where you have launched c-through-server
 
-4) Get the hostname and port no Y from ngrok and use them to connect other rvc-tcp-clients
+4) Get the hostname and port no Y from ngrok and use them to connect other c-through-clients
 
 ## Instructions
 
@@ -175,6 +176,7 @@ Client ignores above signals by default.
 <br>
 Server closes all active connections and threads and terminates on above signals.<br>
 Client closes connection with server and listner thread and terminates on above signals.
+
 
 ## Author
 
