@@ -16,6 +16,7 @@ wrapper :
 pack : 
 	rm -rf ._
 	mkdir ._
+        mkdir ./release
 	mv __server__ ._
 	mv __client__ ._
 	chmod +x launch.sh
@@ -25,7 +26,7 @@ pack :
 	printf '\n%s\n' "# --- PAYLOAD --- #" >> __wrapper__
 	cat __wrapper__ payload.tar.gz > c-through
 	chmod +x c-through
-	mv c-through release
+	mv c-through ./release/
 	rm __wrapper__
 	rm payload.tar.gz
 	rm -rf ._
