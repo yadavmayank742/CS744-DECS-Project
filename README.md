@@ -20,14 +20,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-However this project is built on Kali Linux 6.8.11-amd64 so
-the release for this project can work on any 64 bit Debian distributions.
-However we are planning to create a configuration for Windows in further releases
-
+However this project is built on Kali Linux 6.8.11-amd64 so the release for this project can work on any 64-bit Debian distributions.
 On the OS you need:
-1) gnu make
-2) g++ >= 5.4.0 with libpthread.so
-3) tar archiver
+1) gnu `make`
+2) `g++` >= 5.4.0 with `libpthread.so`
+3) `tar` archiver
 
 ### Compilation
 
