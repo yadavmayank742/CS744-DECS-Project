@@ -156,7 +156,7 @@ where X is port where you have launched rvc-tcp-server
 8) To exit the room just send ' --exit-- ' to the server so it will
    terminate your connection.
 
-![commands.png](docs/commands.png)
+![commands.png](commands.png)
 
 ## Signal handling
 
