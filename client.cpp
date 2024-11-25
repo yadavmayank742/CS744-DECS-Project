@@ -309,7 +309,7 @@ int main(int argc, char** argv) {
     client_type client = { EMPTY_SOCKET, -1, "" };
     string message, sent_message = "";
     
-    mycout << "    RVC TCP STATION CLIENT Copyright (c) 2019 Rajas Chavadekar ( @rvcgeeks____ )\n";
+    mycout << "    C-Through by Mayank Yadav";
     
     /* Arguments :: -1 on user error */
     if (argc < 3) {
