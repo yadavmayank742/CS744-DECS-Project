@@ -12,7 +12,7 @@ Note:
 
 ## Internal Architecture
 
-![architecture.png](docs/architecture.png)
+![architecture.png](architecture.png)
 
 ## Getting Started
 
